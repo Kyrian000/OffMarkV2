@@ -1,5 +1,6 @@
 *{
     cursor: none !important;
+    padding: 0;
 }
 :root {
     --orange: #E84C1E;
@@ -1025,17 +1026,10 @@
     transition: background 0.2s !important;
   }
 
-    
-    @keyframes animateNavItems {
-        0%{
-            transform: translateX(100%) ;
-        }
-        100%{
-            transform: translateX(0) ;
-            opacity: 100;
-        }
-    }
-    @keyframes reanimate {
+  .hidden{
+    animation: reanimate 400ms linear backwards;    
+  }
+      @keyframes reanimate {
         0%{
             transform: translateX(0);
             opacity: 100;
@@ -1045,8 +1039,20 @@
             transform: translateX(100%);
         }
     }
-    #hero { padding: 120px 32px 80px; 
-            margin-top: -7rem;    
+
+    @keyframes animateNavItems {
+        0%{
+            transform: translateX(100%) ;
+        }
+        100%{
+            transform: translateX(0) ;
+            opacity: 100;
+        }
+    }
+
+    #hero { 
+      padding: 120px 32px 80px; 
+      /* margin-top: -7rem;     */
     }
     section { padding: 80px 32px; }
     #about { grid-template-columns: 1fr; }
@@ -1059,10 +1065,13 @@
   }
 
   @media (max-width: 700px) {
-    nav { padding: 16px 20px; }
+    nav { 
+      padding: 16px 20px; 
+      height: 4rem;
+    }
     .nav-links { display: none; }
     #hero { padding: 100px 20px 60px;
-            margin-top: -2rem;    
+            /* margin-top: -2rem;     */
     }
     section { padding: 64px 20px; }
     .hero-stat-row { gap: 28px; }
@@ -1077,4 +1086,11 @@
     .waitlist-form { flex-direction: column; }
     .waitlist-form input { text-align: center; }
     #waitlist::before { font-size: 140px; }
+  }
+
+  @media (max-width: 360) {
+    body{
+      padding: 0;
+      margin: 0;
+    }
   }

@@ -61,19 +61,34 @@ document.addEventListener("DOMContentLoaded", () => {
     const menuBtn = document.querySelector("#open-menu-btn");
     const closeBtn = document.querySelector("#close-menu-btn");
 
+    // Reusable close function
+    const closeMenu = () => {
+        menu.classList.add('hidden');
+
+        // Wait for animation to finish before hiding
+        menu.addEventListener('animationend', () => {
+            menu.style.display = "none";
+            menu.classList.remove('hidden');
+            menuBtn.style.display = "inline-block";
+            closeBtn.style.display = "none";
+        }, { once: true }); // 'once' auto-removes listener after it fires
+    };
+
     menuBtn.addEventListener("click", () => {
         menu.style.display = "flex";
         menuBtn.style.display = "none";
         closeBtn.style.display = "inline-block";
     });
 
-    closeBtn.addEventListener("click", () => {
-        menu.style.display = "none";
-        menuBtn.style.display = "inline-block";
-        closeBtn.style.display = "none";
+    closeBtn.addEventListener("click", closeMenu);
+
+    // Scroll listener
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 50 && menu.style.display === "flex") {
+            closeMenu();
+        }
     });
 });
-
 
 
 
@@ -117,3 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href = url;           // go to new page (swipe UP fires on load there)
       }, 800);                                // wait for animation to finish
     }
+
+
+
+
