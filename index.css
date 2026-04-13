@@ -35,6 +35,27 @@
   ::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 2px; }
 
 
+  /* Curtain loader */
+/* ── CURTAIN ── */
+    #curtain {
+      border-bottom-left-radius: 3rem;
+      border-bottom-right-radius: 3rem;
+      position: fixed;
+      inset: 0;
+      background: rgb(179, 167, 167);
+      z-index: 9999;
+      pointer-events: none;
+      transform: translateY(0%);
+      transition: transform 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+      background-image: url('Images/White/logo.png');
+      background-position: center;
+      background-size: 8rem auto;
+      background-repeat: no-repeat;
+      }
+    #curtain.up   { transform: translateY(-100%); }
+    #curtain.down { transform: translateY(0%); }
+
+
 /* custom cursor */
     #custom-cursor {
     position: fixed;
