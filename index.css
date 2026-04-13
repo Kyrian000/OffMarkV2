@@ -921,6 +921,7 @@
     #custom-cursor{
         display: none;
     }
+    
     nav button{
         display: inline-block;
         background: transparent;
@@ -928,7 +929,6 @@
         color: var(--white);
         cursor: pointer;
         border: 1px solid transparent;
-        margin-top: 2rem;
     }
     nav button#close-menu-btn{
         display: none;
