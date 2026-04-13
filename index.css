@@ -974,6 +974,10 @@
         height: fit-content;
         width: 18rem;
         flex-direction: column;
+        @media (max-width: 700px) {
+          width: 12rem;
+          height: 15rem;
+        }
     }
     .nav-links li{
         width: 100%;
@@ -981,6 +985,8 @@
         animation: animateNavItems 400ms linear forwards;
         transform-origin: top right;
         opacity: 0;
+        border: 1px solid white;
+        border-style: dotted;
                 &:nth-child(2){
                     animation-delay: .1s;
                 }
@@ -996,7 +1002,7 @@
     }
 
     .nav-links li a{
-        background: var(--text-muted);
+        background: var(--black);
         box-shadow:-4rem 6rem 10rem rgba(0, 0, 0, 0.6);
         padding: 0;
         width: 100%;
@@ -1022,10 +1028,10 @@
     
     @keyframes animateNavItems {
         0%{
-            transform: rotateZ(-90deg) rotateX(90deg) scale(0.1);
+            transform: translateX(100%) ;
         }
         100%{
-            transform: rotateZ(0) rotateX(0) scale(1);
+            transform: translateX(0) ;
             opacity: 100;
         }
     }
