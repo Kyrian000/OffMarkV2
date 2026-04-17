@@ -162,14 +162,14 @@ const ANNOUNCE_IMGS = [
 ];
 
 const PLATFORM_IMGS = [
-  'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=400&q=75',
-  'https://images.unsplash.com/photo-1523381294911-8d3cead13475?w=400&q=75',
-  'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=400&q=75',
-  'https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=400&q=75',
-  'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=75',
-  'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&q=75',
-  'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=400&q=75',
-  'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=400&q=75',
+  'Images/White/one.png',
+  'Images/White/two.png',
+  'Images/White/three.png',
+  'Images/White/four.jpg',
+  'Images/White/five.png',
+  'Images/Black/six.jpg',
+  'Images/Black/seven.png',
+  'Images/Black/eight.png',
 ];
 
 const FOUNDER_TOOL_IMGS = [
