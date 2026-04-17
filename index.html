@@ -8,7 +8,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="index.css">
 
-  
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
      <!-- favicon -->
       <link rel="icon" type="image/svg+xml" href="Images/White/Logo2.png">
     
@@ -47,10 +49,12 @@
   <button id="close-menu-btn"><i class="fa-solid fa-xmark"></i></i></button>
 </nav>
 
+
 <!-- HERO -->
 <section id="hero">
+  <div class="hero-slides" id="heroSlides"></div>
   <div class="hero-bg"></div>
-  <div class="hero-grid-lines"></div>
+  <div class="hero-grid"></div>
 
 <!-- old background svg -->
   <!-- <svg class="hero-big-mark" viewBox="0 0 600 480" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -95,6 +99,7 @@
       </div>
     </div>
   </div>
+  <div class="hero-dots" id="heroDots"></div>
 </section>
 
 <!-- TICKER -->
@@ -117,50 +122,31 @@
 
 <!-- ABOUT -->
 <section id="about">
+  <div class="about-bg-slides" id="aboutSlides"></div>
+  <div class="about-overlay"></div>
   <div>
     <div class="section-label">Who We Are</div>
     <h2 class="section-title">NOT JUST A<br>CLOTHING BRAND</h2>
-    <p class="section-body">
-      Offmark NIG LTD operates at the intersection of clothing design, technology, and community. We're building a complete fashion ecosystem that empowers designers, connects fashion lovers, and redefines how people experience fashion in Africa and beyond.
-    </p>
+    <p class="section-body">Offmark NIG LTD operates at the intersection of clothing design, technology, and community. We're building a complete fashion ecosystem that empowers designers, connects fashion lovers, and redefines how people experience fashion in Africa and beyond.</p>
     <div class="about-pillars">
       <div class="pillar fade-up">
         <div class="pillar-num">01</div>
-        <div>
-          <h4>The Offmark Clothing Brand</h4>
-          <p>A limited-series clothing label focused on unique, exclusive designs that celebrate street culture and personal expression. Every piece is a collector's item.</p>
-        </div>
+        <div><h4>The Offmark Clothing Brand</h4><p>A limited-series clothing label focused on unique, exclusive designs that celebrate street culture and personal expression. Every piece is a collector's item.</p></div>
       </div>
       <div class="pillar fade-up">
         <div class="pillar-num">02</div>
-        <div>
-          <h4>The Orange App</h4>
-          <p>A first-of-its-kind digital fashion platform combining a marketplace, a creators' space, and a social community — all in one seamless experience.</p>
-        </div>
+        <div><h4>The Orange App</h4><p>A first-of-its-kind digital fashion platform combining a marketplace, a creators' space, and a social community — all in one seamless experience.</p></div>
       </div>
     </div>
   </div>
-
-  <div class="about-visual">
+  <div>
     <div class="about-card">
       <div style="font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:3px;color:var(--text-dim);margin-bottom:28px;">THE LIMITED SERIES MODEL</div>
       <div style="display:flex;flex-direction:column;gap:16px;">
-        <div style="display:flex;gap:16px;align-items:center;">
-          <div style="width:8px;height:8px;border-radius:50%;background:var(--orange);flex-shrink:0;"></div>
-          <p style="font-size:14px;color:var(--text-dim);line-height:1.5;">Each design produced in a controlled, limited quantity</p>
-        </div>
-        <div style="display:flex;gap:16px;align-items:center;">
-          <div style="width:8px;height:8px;border-radius:50%;background:var(--orange);flex-shrink:0;"></div>
-          <p style="font-size:14px;color:var(--text-dim);line-height:1.5;">Once a series sells out, that design is permanently retired</p>
-        </div>
-        <div style="display:flex;gap:16px;align-items:center;">
-          <div style="width:8px;height:8px;border-radius:50%;background:var(--orange);flex-shrink:0;"></div>
-          <p style="font-size:14px;color:var(--text-dim);line-height:1.5;">Every piece carries lasting exclusivity and value</p>
-        </div>
-        <div style="display:flex;gap:16px;align-items:center;">
-          <div style="width:8px;height:8px;border-radius:50%;background:var(--orange);flex-shrink:0;"></div>
-          <p style="font-size:14px;color:var(--text-dim);line-height:1.5;">You own a piece of a moment — never mass-produced</p>
-        </div>
+        <div style="display:flex;gap:16px;align-items:center;"><div style="width:8px;height:8px;border-radius:50%;background:var(--orange);flex-shrink:0;"></div><p style="font-size:14px;color:var(--text-dim);line-height:1.5;">Each design produced in a controlled, limited quantity</p></div>
+        <div style="display:flex;gap:16px;align-items:center;"><div style="width:8px;height:8px;border-radius:50%;background:var(--orange);flex-shrink:0;"></div><p style="font-size:14px;color:var(--text-dim);line-height:1.5;">Once a series sells out, that design is permanently retired</p></div>
+        <div style="display:flex;gap:16px;align-items:center;"><div style="width:8px;height:8px;border-radius:50%;background:var(--orange);flex-shrink:0;"></div><p style="font-size:14px;color:var(--text-dim);line-height:1.5;">Every piece carries lasting exclusivity and value</p></div>
+        <div style="display:flex;gap:16px;align-items:center;"><div style="width:8px;height:8px;border-radius:50%;background:var(--orange);flex-shrink:0;"></div><p style="font-size:14px;color:var(--text-dim);line-height:1.5;">You own a piece of a moment — never mass-produced</p></div>
       </div>
       <div style="margin-top:36px;padding-top:28px;border-top:1px solid rgba(255,255,255,0.06);">
         <div style="font-family:'Bebas Neue',sans-serif;font-size:48px;color:var(--orange);line-height:1;">100%</div>
@@ -174,6 +160,8 @@
 
 <!-- ANNOUNCEMENTS -->
 <section id="announcements">
+  <div class="announce-bg-track"><div class="announce-bg-strip" id="announceBgStrip"></div></div>
+  <div class="announce-bg-overlay"></div>
   <div class="announce-header">
     <div>
       <div class="section-label">Latest News</div>
@@ -181,39 +169,56 @@
     </div>
     <a href="#" style="font-family:'Syne',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);text-decoration:none;">View All →</a>
   </div>
-
   <div class="announce-grid">
-    <div class="announce-card featured fade-up">
-      <div class="announce-tag">🔥 Major Update</div>
-      <h3>The Orange App is Coming — Join the Waitlist Now</h3>
-      <p>We're in the final stages of building Africa's first complete fashion ecosystem. The Offmark App — combining a marketplace, a creators' space, and a social platform — is preparing for its debut. Be among the first to experience it.</p>
-      <div class="announce-date">April 2025</div>
-      <div class="announce-arrow">↗</div>
+        <div class="announce-card featured fade-up">
+          <div class="announce-tag">🔥 Major Update</div>
+          <h3>The Orange App is Coming — Join the Waitlist Now</h3>
+          <p>We're in the final stages of building Africa's first complete fashion ecosystem. The Offmark App — combining a marketplace, a creators' space, and a social platform — is preparing for its debut. Be among the first to experience it.</p>
+          <div class="announce-date">April 2025</div>
+          <div class="announce-arrow">↗</div>
+        </div>
+  </div>
+   <!-- Swiper -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="announce-card fade-up">
+          <div class="announce-tag">Collection</div>
+          <h3>Series 001 — Preview Incoming</h3>
+          <p>Our inaugural limited-series streetwear collection is almost ready to reveal. Once it drops, it won't come back.</p>
+          <div class="announce-date">March 2025</div>
+          <div class="announce-arrow">↗</div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="announce-card fade-up">
+          <div class="announce-tag">Platform</div>
+          <h3>Creators Space Beta Opens to Early Users</h3>
+          <p>The Creators Space will open to a select group of early adopters. Upload your designs, connect with producers, and earn commission on every order.</p>
+          <div class="announce-date">Coming Soon</div>
+          <div class="announce-arrow">↗</div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="announce-card fade-up">
+          <div class="announce-tag">Platform</div>
+          <h3>Creators Space Beta Opens to Early Users</h3>
+          <p>The Creators Space will open to a select group of early adopters. Upload your designs, connect with producers, and earn commission on every order.</p>
+          <div class="announce-date">Coming Soon</div>
+          <div class="announce-arrow">↗</div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+      <div class="announce-card fade-up">
+        <div class="announce-tag">Community</div>
+        <h3>The Drip — Fashion Social Feed Launches with the App</h3>
+        <p>Post your outfits. Build your following. Rate and be rated. The Drip is where the Offmark community comes alive.</p>
+        <div class="announce-date">Coming Soon</div>
+        <div class="announce-arrow">↗</div>
+      </div>
+      </div>
     </div>
-
-    <div class="announce-card fade-up">
-      <div class="announce-tag">Collection</div>
-      <h3>Series 001 — Preview Incoming</h3>
-      <p>Our inaugural limited-series streetwear collection is almost ready to reveal. Once it drops, it won't come back.</p>
-      <div class="announce-date">March 2025</div>
-      <div class="announce-arrow">↗</div>
-    </div>
-
-    <div class="announce-card fade-up">
-      <div class="announce-tag">Platform</div>
-      <h3>Creators Space Beta Opens to Early Users</h3>
-      <p>The Creators Space will open to a select group of early adopters. Upload your designs, connect with producers, and earn commission on every order.</p>
-      <div class="announce-date">Coming Soon</div>
-      <div class="announce-arrow">↗</div>
-    </div>
-
-    <div class="announce-card fade-up">
-      <div class="announce-tag">Community</div>
-      <h3>The Drip — Fashion Social Feed Launches with the App</h3>
-      <p>Post your outfits. Build your following. Rate and be rated. The Drip is where the Offmark community comes alive.</p>
-      <div class="announce-date">Coming Soon</div>
-      <div class="announce-arrow">↗</div>
-    </div>
+    <div class="swiper-pagination"></div>
   </div>
 </section>
 
@@ -221,8 +226,10 @@
 
 <!-- PLATFORM -->
 <section id="platform">
+  <div class="platform-bg"><div class="platform-phones-track" id="phonesTrack"></div></div>
+  <div class="platform-overlay"></div>
   <div class="platform-intro">
-    <div>
+  <div>
       <div class="section-label">The Platform</div>
       <h2 class="section-title">EVERYTHING<br>IN ONE APP</h2>
       <p class="section-body">
@@ -279,7 +286,7 @@
     <p class="section-body" style="margin:0 auto;">Everything we build — from the clothing label to the app — is grounded in five principles that define what Offmark stands for.</p>
   </div>
 
-  <!-- <div class="values-grid">
+  <div class="values-grid">
     <div class="value-item fade-up">
       <div class="value-num">01</div>
       <h4>Exclusivity</h4>
@@ -305,7 +312,7 @@
       <h4>Empowerment</h4>
       <p>We believe anyone can be a fashion creator, and we build accordingly.</p>
     </div>
-  </div> -->
+  </div>
 </section>
 
 <div class="divider"></div>
@@ -452,9 +459,36 @@
   </div>
 </footer>
 
-<script>
+<!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 
-</script>
-<script src="index.js"></script>
+  <!-- Initialize Swiper -->
+  <script>
+      var swiper = new Swiper(".mySwiper", {
+      effect: "cube",
+      grabCursor: true,
+      loop: true,
+
+      cubeEffect: {
+        shadow: true,
+        slideShadows: true,
+        shadowOffset: 20,
+        shadowScale: 0.94,
+      },
+      autoplay:{
+        delay: 3000,
+        disableOnInteraction: true,
+      } 
+      
+      // pagination: {
+      //   el: ".swiper-pagination",
+      //   clickable: true,  
+      //   dynamicBullets: false,  
+      // },
+    });
+
+    
+  </script>
+  <script src="index.js"></script>
 </body>
 </html>
