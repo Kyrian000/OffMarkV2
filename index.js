@@ -374,3 +374,22 @@ const WAITLIST_IMGS = [
     container.children[current].classList.add('active');
   }, 4500);
 })();
+
+
+
+
+const cards = document.querySelectorAll('.feature-card');
+
+window.addEventListener('scroll', () => {
+  cards.forEach((card, i) => {
+    const rect = card.getBoundingClientRect();
+    // Card is stuck at top — start shrinking it
+    if (rect.top <= 0) {
+      const scale = Math.max(0.92, 1 + rect.top * 0.0003);
+      card.style.transform = `scale(${scale})`;
+      card.style.transformOrigin = 'top center';
+    } else {
+      card.style.transform = 'scale(1)';
+    }
+  });
+}, { passive: true });

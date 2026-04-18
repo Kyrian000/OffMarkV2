@@ -50,7 +50,7 @@
       width: 300px;
       height: 300px;
       .announce-card{
-        height: 23rem;
+        height: 10%;
       }
     }
 
@@ -514,49 +514,13 @@
     margin-bottom: 80px;
   }
 
-  .features-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: rgba(255,255,255,0.04);
-    border-radius: 4px;
-    overflow: hidden;
-  }
-
-  .feature-card {
-    background: var(--dark2);
-    padding: 40px 36px;
-    transition: background 0.2s;
-  }
-
-  .feature-card:hover { background: var(--dark3); }
-
-  .feature-icon {
-    width: 48px; height: 48px;
-    background: rgba(232,76,30,0.12);
-    border-radius: 3px;
-    display: flex; align-items: center; justify-content: center;
-    margin-bottom: 24px;
-  }
-
-  .feature-icon svg {
-    width: 22px; height: 22px;
-    fill: var(--orange);
-  }
-
-  .feature-card h3 {
-    font-family: 'Syne', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--white);
-    margin-bottom: 12px;
-  }
-
-  .feature-card p {
-    font-size: 14px;
-    color: var(--text-dim);
-    line-height: 1.65;
-  }
+.features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,0.04); border-radius: 4px; overflow: hidden; }
+  .feature-card { background: rgba(24,24,24,0.92); backdrop-filter: blur(8px); padding: 40px 36px; transition: background 0.2s; }
+  .feature-card:hover { background: rgba(30,30,30,0.96); }
+  .feature-icon { width: 48px; height: 48px; background: rgba(232,76,30,0.12); border-radius: 3px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; }
+  .feature-icon svg { width: 22px; height: 22px; fill: none; stroke: var(--orange); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .feature-card h3 { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 12px; }
+  .feature-card p { font-size: 14px; color: var(--text-dim); line-height: 1.65; }
 
   /* ── VALUES ── */
   #values {
@@ -608,105 +572,32 @@
     line-height: 1.6;
   }
 
-  /* ── FOUNDERS ── */
-  #founders {
-    background: var(--dark);
-  }
-
-  .founders-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-top: 56px;
-  }
-
-  .founder-card {
-    background: var(--dark2);
-    border: 1px solid rgba(255,255,255,0.05);
-    border-radius: 4px;
-    overflow: hidden;
-    transition: transform 0.2s, border-color 0.2s;
-  }
-
-  .founder-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(232,76,30,0.3);
-  }
-
-  .founder-img {
-    height: 260px;
-    background: var(--dark3);
-    position: relative;
-    overflow: hidden;
-    display: flex; align-items: center; justify-content: center;
-  }
-
-  .founder-img-placeholder {
-    width: 80px; height: 80px;
-    border-radius: 50%;
-    background: rgba(232,76,30,0.12);
-    display: flex; align-items: center; justify-content: center;
-  }
-
-  .founder-img-placeholder svg {
-    width: 36px; height: 36px;
-    fill: var(--orange);
-    opacity: 0.6;
-  }
-
-  .founder-gradient {
-    position: absolute; bottom: 0; left: 0; right: 0;
-    height: 80px;
-    background: linear-gradient(transparent, var(--dark2));
-  }
-
-  .founder-info {
-    padding: 28px 28px 32px;
-  }
-
-  .founder-info h3 {
-    font-family: 'Syne', sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--white);
-    margin-bottom: 4px;
-  }
-
-  .founder-role {
-    font-size: 12px;
-    color: var(--orange);
-    font-family: 'Syne', sans-serif;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-bottom: 16px;
-  }
-
-  .founder-info p {
-    font-size: 14px;
-    color: var(--text-dim);
-    line-height: 1.65;
-  }
-
-  .founder-links {
-    display: flex; gap: 10px; margin-top: 20px;
-  }
-
-  .founder-link {
-    width: 32px; height: 32px;
-    background: rgba(255,255,255,0.06);
-    border-radius: 2px;
-    display: flex; align-items: center; justify-content: center;
-    text-decoration: none;
-    transition: background 0.2s;
-  }
-
+  /* FOUNDERS */
+  #founders { position: relative; overflow: hidden; padding: 100px 60px; background: var(--dark); }
+  .founders-bg { position: absolute; inset: 0; z-index: 0; }
+  .founders-bg-img { position: absolute; width: 110px; height: 110px; background-size: cover; background-position: center; border-radius: 4px; opacity: 0.07; filter: grayscale(100%); }
+  .founders-overlay { position: absolute; inset: 0; z-index: 1; background: rgba(17,17,17,0.91); }
+  #founders > *:not(.founders-bg):not(.founders-overlay) { position: relative; z-index: 2; }
+  .founders-carousel-wrap { position: relative; overflow: hidden; margin-top: 56px; cursor: grab; user-select: none; }
+  .founders-carousel-wrap.dragging { cursor: grabbing; }
+  .founders-track { display: flex; gap: 24px; transition: transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94); will-change: transform; }
+  .founder-card { min-width: calc(33.333% - 16px); background: rgba(24,24,24,0.95); border: 1px solid rgba(255,255,255,0.05); border-radius: 4px; overflow: hidden; flex-shrink: 0; transition: border-color 0.2s; }
+  .founder-card:hover { border-color: rgba(232,76,30,0.3); }
+  .founder-img { height: 260px; background: var(--dark3); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+  .founder-img-placeholder { width: 80px; height: 80px; border-radius: 50%; background: rgba(232,76,30,0.12); display: flex; align-items: center; justify-content: center; }
+  .founder-img-placeholder svg { width: 36px; height: 36px; fill: none; stroke: var(--orange); stroke-width: 1.5; opacity: 0.6; }
+  .founder-gradient { position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(transparent, rgba(24,24,24,0.95)); }
+  .founder-info { padding: 28px 28px 32px; }
+  .founder-info h3 { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+  .founder-role { font-size: 12px; color: var(--orange); font-family: 'Syne', sans-serif; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px; }
+  .founder-info p { font-size: 14px; color: var(--text-dim); line-height: 1.65; }
+  .founder-links { display: flex; gap: 10px; margin-top: 20px; }
+  .founder-link { width: 32px; height: 32px; background: rgba(255,255,255,0.06); border-radius: 2px; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: background 0.2s; }
   .founder-link:hover { background: var(--orange); }
-
-  .founder-link svg {
-    width: 14px; height: 14px;
-    fill: var(--white);
-  }
+  .founder-link svg { width: 14px; height: 14px; fill: none; stroke: var(--white); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .carousel-nav { display: flex; gap: 8px; margin-top: 32px; align-items: center; }
+  .carousel-dot { width: 24px; height: 3px; background: rgba(255,255,255,0.15); border-radius: 2px; cursor: pointer; transition: background 0.3s, width 0.3s; border: none; }
+  .carousel-dot.active { background: var(--orange); width: 40px; }
 
   /* ── WAITLIST / CTA ── */
   #waitlist {
@@ -1049,7 +940,8 @@
     .announce-card.featured { grid-column: span 2; }
     .platform-intro { grid-template-columns: 1fr; gap: 40px; }
     .values-grid { grid-template-columns: repeat(3, 1fr); }
-    .founders-grid { grid-template-columns: repeat(2, 1fr); }
+    .founders-carousel-wrap{ margin-left: -2rem; margin-right: -2rem;}
+    .founder-card { width: fit-content; height: max-content; }
     .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
   }
 
@@ -1066,7 +958,7 @@
     .hero-stat-row { gap: 28px; }
     .announce-grid { grid-template-columns: 1fr; }
     .announce-card.featured { grid-column: span 1; }
-    .features-grid { grid-template-columns: 1fr; }
+    .features-grid { grid-template-columns: 1fr; margin-left: -2rem; margin-right: -2rem;}
     .values-grid { grid-template-columns: repeat(2, 1fr); }
     .founders-grid { grid-template-columns: 1fr; }
     .footer-top { grid-template-columns: 1fr; gap: 32px; }
