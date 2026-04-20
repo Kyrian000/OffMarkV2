@@ -581,12 +581,27 @@
   .founders-carousel-wrap { position: relative; overflow: hidden; margin-top: 56px; cursor: grab; user-select: none; }
   .founders-carousel-wrap.dragging { cursor: grabbing; }
   .founders-track { display: flex; gap: 24px; transition: transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94); will-change: transform; }
-  .founder-card { min-width: calc(33.333% - 16px); background: rgba(24,24,24,0.95); border: 1px solid rgba(255,255,255,0.05); border-radius: 4px; overflow: hidden; flex-shrink: 0; transition: border-color 0.2s; }
-  .founder-card:hover { border-color: rgba(232,76,30,0.3); }
+  .founder-card { min-width: 100%; background: rgba(24,24,24,0.95); border: 1px solid rgba(255,255,255,0.05); border-radius: 4px; overflow: hidden; flex-shrink: 0; transition: border-color 0.2s; }
+  .founder-card:hover { border-color: rgba(232,76,30,0.3); 
+          img{
+            filter: grayscale(0);
+            transition: filter 0.5s ease-in-out;
+          }
+  }
   .founder-img { height: 260px; background: var(--dark3); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-  .founder-img-placeholder { width: 80px; height: 80px; border-radius: 50%; background: rgba(232,76,30,0.12); display: flex; align-items: center; justify-content: center; }
+  .founder-img-placeholder { width: 10rem; height: auto; border-radius: 50%; background: rgba(232,76,30,0.12); display: flex; align-items: center; justify-content: center;
+      img{
+        width: 22rem;
+        height: auto;
+        filter: grayscale(100%);
+        &:hover{
+          filter: grayscale(0);
+          transition: filter 0.5s ease-in-out;
+        }
+      } 
+    }
   .founder-img-placeholder svg { width: 36px; height: 36px; fill: none; stroke: var(--orange); stroke-width: 1.5; opacity: 0.6; }
-  .founder-gradient { position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(transparent, rgba(24,24,24,0.95)); }
+  .founder-gradient { position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(transparent, rgba(24, 24, 24, 0.945)); }
   .founder-info { padding: 28px 28px 32px; }
   .founder-info h3 { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
   .founder-role { font-size: 12px; color: var(--orange); font-family: 'Syne', sans-serif; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px; }
